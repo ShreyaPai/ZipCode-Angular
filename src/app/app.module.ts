@@ -16,6 +16,7 @@ import {TabMenuModule} from 'primeng/tabmenu';
 import {MenuItem} from 'primeng/api';
 import { from } from 'rxjs';
 import { RouterModule } from '@angular/router';
+import {DialogModule} from 'primeng/dialog';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { RouterModule } from '@angular/router';
     ButtonModule,
     PanelModule,
     TabMenuModule,
+    DialogModule
     ],
   providers: [],
   bootstrap: [AppComponent]

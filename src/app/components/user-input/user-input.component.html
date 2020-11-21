@@ -16,5 +16,8 @@
 <br />
 <div *ngIf="pincodeEntered === true">
   <hr />
+  <p-dialog [(visible)]="isZipcodeInvalid" header="Error!">
+    {{showError}}
+</p-dialog>
   <app-details [pincodeDetails]="pincodeDetails"></app-details>
 </div>

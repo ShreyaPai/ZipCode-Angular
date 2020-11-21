@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class PincodeService {
-  private IndiaUrl = 'http://api.postalpincode.in/pincode';
+  private IndiaUrl = 'https://api.postalpincode.in/pincode';
   private UsaUrl = 'https://api.zip-codes.com/ZipCodesAPI.svc/1.0/QuickGetZipCodeDetails';
   private ukUrl = 'https://api.postcodes.io/postcodes'
   constructor(private http: HttpClient) { }
