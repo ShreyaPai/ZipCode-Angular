@@ -1,0 +1,20 @@
+<br><br>
+<div style="font-weight: bold; font-size: large;">
+<span *ngIf = "!activeCountry; else elseBlock">Please Select a Country</span>
+<ng-template #elseBlock>Selected Country: {{activeCountry}}</ng-template>
+<br>
+</div>
+<input type="text" pInputText [(ngModel)]="userInput" [disabled] = "!activeCountry"/>
+<button
+  pButton
+  type="button"
+  label="Search"
+  class="p-button-secondary"
+  (click)="getDetailsOnPincode(userInput)"
+  [disabled] = "!activeCountry || !userInput"
+></button>
+<br />
+<div *ngIf="pincodeEntered === true">
+  <hr />
+  <app-details [pincodeDetails]="pincodeDetails"></app-details>
+</div>

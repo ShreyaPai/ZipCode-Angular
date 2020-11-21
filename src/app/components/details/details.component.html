@@ -1,0 +1,12 @@
+<div *ngFor="let code of pincodeDetails">
+<p-panel header="{{code.pincode}}">
+  <span *ngIf="code.location"><b>Location:</b> {{code.location}}</span>
+  <br>
+  <b>City:</b> {{code.city}}
+  <br>
+  <b>State:</b> {{code.state}}
+  <br>
+  <b>Country:</b> {{code.country}}</p-panel>
+  <br>
+</div>
+
