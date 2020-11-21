@@ -43,7 +43,7 @@ export class UserInputComponent implements OnInit {
             }
         });
       }else if (this.activeCountry === 'USA') {
-          if(response && response.Error && response.Error !== '') {
+          if(response === undefined || (response.Error && response.Error !== '')) {
             this.showErrorPopup();
           } else {
             console.log('response :>> ', response);
