@@ -26,8 +26,7 @@ export class UserInputComponent implements OnInit {
       .getCityPincode(this.activeCountry, pincode)
       .subscribe((response) => {
         if (this.activeCountry === 'India') {
-          let requredData;
-          requredData = response.forEach((element) => {
+          response.forEach((element) => {
             if(element && element.PostOffice !== null) {
               element.PostOffice.filter((data) => {
                 this.pincodeDetails.push({
@@ -43,7 +42,7 @@ export class UserInputComponent implements OnInit {
             }
         });
       }else if (this.activeCountry === 'USA') {
-          if(response === undefined || (response.Error && response.Error !== '')) {
+          if(this.isEmpty(response) || response === undefined || (response.Error && response.Error !== '')) {
             this.showErrorPopup();
           } else {
             console.log('response :>> ', response);
@@ -65,11 +64,21 @@ export class UserInputComponent implements OnInit {
           });
         }
         this.pincodeEntered = true;
+      }, (error) => {
+        this.showErrorPopup();
       });
   }
 
   showErrorPopup() {
       this.isZipcodeInvalid = true;
-      this.showError = 'Please enter a valid Url';
+      this.showError = 'Please enter a valid Zipcode';
   }
+
+  public isEmpty(response) {
+    for(let key in response) {
+        if(response.hasOwnProperty(key))
+            return false;
+    }
+    return true;
+}
 }
