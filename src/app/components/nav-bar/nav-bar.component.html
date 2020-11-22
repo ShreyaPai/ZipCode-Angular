@@ -1,3 +1,6 @@
-<p-tabMenu #tab [model]="country" (click)="changeCountry(tab)">
-</p-tabMenu>
-<app-user-input [activeCountry]="activeCountry"></app-user-input>
+<div class="cardComponent" style="margin:0 auto; position: absolute;">
+  <p-tabMenu #tab [model]="country" (click)="changeCountry(tab)">
+  </p-tabMenu>
+  <app-user-input [activeCountry]="activeCountry"></app-user-input>
+</div>
+

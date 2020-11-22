@@ -1,0 +1,9 @@
+.cardComponent {
+  position: absolute;
+    top: 30%;
+    left: 40%;
+    margin-top: -50px;
+    margin-left: -50px;
+    /* width: 100px;
+    height: 100px; */
+}
