@@ -15,6 +15,7 @@ import {PanelModule} from 'primeng/panel';
 import {TabMenuModule} from 'primeng/tabmenu';
 import {MenuItem} from 'primeng/api';
 import { from } from 'rxjs';
+import {CardModule} from 'primeng/card';
 import { RouterModule } from '@angular/router';
 import {DialogModule} from 'primeng/dialog';
 
@@ -37,7 +38,8 @@ import {DialogModule} from 'primeng/dialog';
     ButtonModule,
     PanelModule,
     TabMenuModule,
-    DialogModule
+    DialogModule,
+    CardModule
     ],
   providers: [],
   bootstrap: [AppComponent]

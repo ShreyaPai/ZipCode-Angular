@@ -64,8 +64,6 @@ export class UserInputComponent implements OnInit {
           });
         }
         this.pincodeEntered = true;
-      }, (error) => {
-        this.showErrorPopup();
       });
   }
 
@@ -80,5 +78,5 @@ export class UserInputComponent implements OnInit {
             return false;
     }
     return true;
-}
+  }
 }

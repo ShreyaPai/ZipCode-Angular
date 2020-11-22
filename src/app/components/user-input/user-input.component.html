@@ -1,18 +1,23 @@
 <br><br>
-<div style="font-weight: bold; font-size: large;">
-<span *ngIf = "!activeCountry; else elseBlock">Please Select a Country</span>
-<ng-template #elseBlock>Selected Country: {{activeCountry}}</ng-template>
-<br>
+<div class="cardComponent" style="margin:0 auto; position: absolute;">
+  <p-card header="Zip Code Lookup" [style]="{width: '350px'}">
+    <div style="font-weight: bold; font-size: large;">
+      <span *ngIf = "!activeCountry; else elseBlock">Please Select a Country</span>
+      <ng-template #elseBlock>Selected Country: {{activeCountry}}</ng-template>
+      <br><br>
+      <div *ngIf="activeCountry && activeCountry !== ''">Enter ZipCode to Search</div>
+      </div>
+     <input type="text" pInputText [(ngModel)]="userInput" [disabled] = "!activeCountry"/>
+      <button
+        pButton
+        type="button"
+        label="Search"
+        class="p-button-secondary"
+        (click)="getDetailsOnPincode(userInput)"
+        [disabled] = "!activeCountry || !userInput"
+      ></button>
+  </p-card>
 </div>
-<input type="text" pInputText [(ngModel)]="userInput" [disabled] = "!activeCountry"/>
-<button
-  pButton
-  type="button"
-  label="Search"
-  class="p-button-secondary"
-  (click)="getDetailsOnPincode(userInput)"
-  [disabled] = "!activeCountry || !userInput"
-></button>
 <br />
 <div *ngIf="pincodeEntered === true">
   <hr />
