@@ -69,7 +69,8 @@ export class UserInputComponent implements OnInit {
 
   showErrorPopup() {
       this.isZipcodeInvalid = true;
-      this.showError = 'Please enter a valid Zipcode';
+      this.showError = 'Invalid Input';
+      this.userInput = null;
   }
 
   public isEmpty(response) {
